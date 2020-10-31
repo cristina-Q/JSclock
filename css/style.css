@@ -135,6 +135,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: "DS-Digital";
   src: url("/fonts/DS-Digital-Bold.woff2") format("woff2"), url("/fonts/DS-Digital-Bold.woff") format("woff");
@@ -1386,14 +1390,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #282828;
+  font-family: "DS-Digital";
 }
 
 .controls {
-  position: fixed;
+  position: absolute;
   top: 20px;
-  right: 50px;
+}
+.controls .logo img {
+  width: 50px;
+}
+.controls > i {
+  color: rgba(128, 128, 128, 0.541);
+  font-size: 50px;
 }
 .controls > a {
   color: rgba(128, 128, 128, 0.541);
@@ -1414,14 +1425,8 @@ body {
   text-shadow: 0 0 5px cyan;
 }
 
-.date-time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .clock {
-  flex-basis: 500px;
+  width: 500px;
   font-family: "DS-Digital";
   font-weight: bold;
   text-align: center;

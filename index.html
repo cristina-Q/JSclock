@@ -22,6 +22,19 @@
 <body>
   <div class="controls">
     <a
+      class="logo"
+      href="/"
+      target="_blank"
+      rel="noopener noreferrer"
+    > TIME
+      <img
+        src="media/logo.svg"
+        alt="logo"
+        title="logo"
+      > SET
+    </a>
+    <a
+      class="gitfork"
       href="https://github.com/cristina-Q/JSclock"
       target="_blank"
       rel="noopener noreferrer"
@@ -30,18 +43,21 @@
     </a>
   </div>
 
-  <section class="date-time">
-    <div class="clock">
-      <div class="date">
-        <span class="dayname">Day </span>
-        <span class="month">Month </span>
-        <span class="daynumber">00 </span>
-        <span class="year">Year</span>
-      </div>
-
-      <div id="time"></div>
+  <div class="clock">
+    <div class="date">
+      <span class="dayname">Day </span>
+      <span class="month">Month </span>
+      <span class="daynumber">00 </span>
+      <span class="year">Year</span>
     </div>
-  </section>
+
+    <div id="time"></div>
+  </div>
+
+  <div class="timer">
+    <i class="im im-timer"></i>
+  </div>
+
   <script src="js/app.js"></script>
 </body>
 
