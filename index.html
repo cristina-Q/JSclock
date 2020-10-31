@@ -11,23 +11,37 @@
     rel="stylesheet"
     href="css/style.css"
   >
+  <link
+    rel="shortcut icon"
+    href="media/favicon.png"
+    type="image/x-icon"
+  >
   <title>JavaScript Clock</title>
 </head>
 
 <body>
-  <div class="github">
-    <i class="im im-github"></i>
+  <div class="controls">
+    <a
+      href="https://github.com/cristina-Q/JSclock"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="im im-github"><span>Fork<span></i>
+    </a>
   </div>
 
-  <div class="clock">
-    <div class="date">
-      <span class="dayname">Day </span>
-      <span class="month">Month </span>
-      <span class="daynumber">00 </span>
-      <span class="year">Year</span>
+  <section class="date-time">
+    <div class="clock">
+      <div class="date">
+        <span class="dayname">Day </span>
+        <span class="month">Month </span>
+        <span class="daynumber">00 </span>
+        <span class="year">Year</span>
+      </div>
+
+      <div id="time"></div>
     </div>
-    <div id="time"></div>
-  </div>
+  </section>
   <script src="js/app.js"></script>
 </body>
 
