@@ -1386,8 +1386,10 @@ a {
   content: "";
 }
 
-svg #favicon {
-  fill: pink;
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1290px;
 }
 
 body {
@@ -1398,38 +1400,26 @@ body {
   font-family: "DS-Digital";
 }
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1290px;
+.header-top {
+  padding: 30px 2%;
 }
 
-.header-top {
-  padding-top: 20px;
+.header-top-wrapper {
   display: flex;
   justify-content: space-between;
 }
-.header-top .logo {
+.header-top-wrapper .logo i {
+  color: cyan;
+}
+.header-top-wrapper > a {
   font-size: 24px;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 2px;
-}
-.header-top .logo i {
-  color: pink;
-}
-.header-top > a {
   color: rgba(128, 128, 128, 0.541);
 }
-.header-top > a i {
+.header-top-wrapper > a i {
   font-size: 50px;
-}
-.header-top > a i span {
-  font-size: 24px;
-  position: relative;
-  top: 23px;
-  right: 45px;
-  font-family: "DS-Digital";
 }
 
 .logo::before {
@@ -1440,9 +1430,17 @@ body {
   content: "SET";
 }
 
-.header-top > a:hover {
-  color: pink;
-  text-shadow: 0 0 5px pink;
+.gitfork::before {
+  content: "JUST";
+}
+
+.gitfork::after {
+  content: "FORK";
+}
+
+.header-top-wrapper > a:hover {
+  color: cyan;
+  text-shadow: 0 0 5px cyan;
 }
 
 .timer > i {
@@ -1451,8 +1449,8 @@ body {
 }
 
 .timer i:hover {
-  color: pink;
-  text-shadow: 0 0 5px pink;
+  color: cyan;
+  text-shadow: 0 0 5px cyan;
 }
 
 .date-time {
@@ -1471,20 +1469,20 @@ body {
 }
 
 .clock:hover {
-  box-shadow: inset 0px -4px 10px pink, inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px -4px 10px cyan, inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .date {
   font-size: 30px;
   padding-top: 10px;
-  color: pink;
+  color: cyan;
   letter-spacing: 5px;
 }
 
 #time {
   font-size: 80px;
   padding: 5px 20px;
-  color: pink;
+  color: cyan;
   letter-spacing: 7px;
 }
 
