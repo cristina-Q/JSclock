@@ -1387,10 +1387,6 @@ a {
   content: "";
 }
 
-:root {
-  --main-color: cyan;
-}
-
 .container {
   margin: 0 auto;
   width: 100%;

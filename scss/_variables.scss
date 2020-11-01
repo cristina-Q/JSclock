@@ -1,5 +1,5 @@
 $main-color: cyan;
 
-:root {
-  --main-color: #{$main-color};
-}
+// :root {
+//   --main-color: var(--#{$main-color});
+// }

@@ -81,8 +81,13 @@ displayTime();
 
 setInterval(displayTime, 1000);
 
+//change color
 const colorchange = document.getElementsByClassName('change-color');
 
 function randomColor() {
   return Math.floor(Math.random() * 255);
 }
+
+colorchange.addEventListener(click, () => {
+  document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
+});
