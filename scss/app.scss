@@ -3,6 +3,8 @@
 @import './ico'; // site icos
 @import './variables';
 @import './shared';
+@import './header';
+@import './clock';
 
 body {
   display: flex;
@@ -10,50 +12,6 @@ body {
   height: 100vh;
   background-color: #282828;
   font-family: 'DS-Digital';
-}
-
-.header-top {
-  padding: 30px 2%;
-}
-
-.header-top-wrapper {
-  display: flex;
-  justify-content: space-between;
-  & .logo {
-    & i {
-      color: $main-color;
-    }
-  }
-
-  & > a {
-    font-size: 24px;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: 2px;
-    color: rgba(128, 128, 128, 0.541);
-    & i {
-      font-size: 50px;
-    }
-  }
-}
-
-.logo::before {
-  content: 'TIME';
-}
-.logo::after {
-  content: 'SET';
-}
-
-.gitfork::before {
-  content: 'JUST';
-}
-.gitfork::after {
-  content: 'FORK';
-}
-
-.header-top-wrapper > a:hover {
-  color: $main-color;
-  text-shadow: 0 0 5px $main-color;
 }
 
 .timer > i {
@@ -64,43 +22,4 @@ body {
 .timer i:hover {
   color: $main-color;
   text-shadow: 0 0 5px $main-color;
-}
-
-.date-time {
-  flex: 1 1 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.date-time .clock {
-  flex-basis: 500px;
-  font-family: 'DS-Digital';
-  font-weight: bold;
-  text-align: center;
-  box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5),
-    4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(67, 67, 67, 0.3),
-    4px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.clock:hover {
-  box-shadow: inset 0px -4px 10px $main-color,
-    inset 4px 4px 10px rgba(0, 0, 0, 0.5),
-    inset -4px -4px 10px rgba(67, 67, 67, 0.3),
-    inset 4px 4px 10px rgba(0, 0, 0, 0.3);
-
-  // box-shadow: 0 0 30px $main-color;
-}
-
-.date {
-  font-size: 30px;
-  padding-top: 10px;
-  color: $main-color;
-  letter-spacing: 5px;
-}
-
-#time {
-  font-size: 80px;
-  padding: 5px 20px;
-  color: $main-color;
-  letter-spacing: 7px;
 }

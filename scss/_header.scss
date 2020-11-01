@@ -1,0 +1,47 @@
+.header-top {
+  padding: 30px 2% 0;
+}
+
+.header-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  & .logo i {
+    color: $main-color;
+  }
+
+  & > a {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: rgba(128, 128, 128, 0.541);
+
+    &:hover {
+      color: $main-color;
+      text-shadow: 0 0 5px $main-color;
+    }
+
+    & i {
+      font-size: 50px;
+    }
+  }
+}
+
+.logo::before {
+  content: 'TIME';
+}
+.logo::after {
+  content: 'SET';
+}
+
+.gitfork::before {
+  content: '>>';
+}
+.gitfork::after {
+  content: 'FORK';
+}
+
+.change-color:before {
+  content: 'Change';
+}

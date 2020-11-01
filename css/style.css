@@ -137,6 +137,7 @@ table {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 @font-face {
@@ -1386,22 +1387,18 @@ a {
   content: "";
 }
 
+:root {
+  --main-color: cyan;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: 1290px;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #282828;
-  font-family: "DS-Digital";
-}
-
 .header-top {
-  padding: 30px 2%;
+  padding: 30px 2% 0;
 }
 
 .header-top-wrapper {
@@ -1418,6 +1415,10 @@ body {
   letter-spacing: 2px;
   color: rgba(128, 128, 128, 0.541);
 }
+.header-top-wrapper > a:hover {
+  color: cyan;
+  text-shadow: 0 0 5px cyan;
+}
 .header-top-wrapper > a i {
   font-size: 50px;
 }
@@ -1431,26 +1432,15 @@ body {
 }
 
 .gitfork::before {
-  content: "JUST";
+  content: ">>";
 }
 
 .gitfork::after {
   content: "FORK";
 }
 
-.header-top-wrapper > a:hover {
-  color: cyan;
-  text-shadow: 0 0 5px cyan;
-}
-
-.timer > i {
-  color: rgba(128, 128, 128, 0.541);
-  font-size: 50px;
-}
-
-.timer i:hover {
-  color: cyan;
-  text-shadow: 0 0 5px cyan;
+.change-color:before {
+  content: "Change";
 }
 
 .date-time {
@@ -1484,6 +1474,24 @@ body {
   padding: 5px 20px;
   color: cyan;
   letter-spacing: 7px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #282828;
+  font-family: "DS-Digital";
+}
+
+.timer > i {
+  color: rgba(128, 128, 128, 0.541);
+  font-size: 50px;
+}
+
+.timer i:hover {
+  color: cyan;
+  text-shadow: 0 0 5px cyan;
 }
 
 /*# sourceMappingURL=style.css.map */

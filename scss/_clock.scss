@@ -1,0 +1,38 @@
+.date-time {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.date-time .clock {
+  flex-basis: 500px;
+  font-family: 'DS-Digital';
+  font-weight: bold;
+  text-align: center;
+  box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5),
+    4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(67, 67, 67, 0.3),
+    4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.clock:hover {
+  box-shadow: inset 0px -4px 10px $main-color,
+    inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+
+  // box-shadow: 0 0 30px $main-color;
+}
+
+.date {
+  font-size: 30px;
+  padding-top: 10px;
+  color: $main-color;
+  letter-spacing: 5px;
+}
+
+#time {
+  font-size: 80px;
+  padding: 5px 20px;
+  color: $main-color;
+  letter-spacing: 7px;
+}
