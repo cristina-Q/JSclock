@@ -1386,47 +1386,84 @@ a {
   content: "";
 }
 
+svg #favicon {
+  fill: pink;
+}
+
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100vh;
   background-color: #282828;
   font-family: "DS-Digital";
 }
 
-.controls {
-  position: absolute;
-  top: 20px;
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1290px;
 }
-.controls .logo img {
-  width: 50px;
+
+.header-top {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
-.controls > i {
-  color: rgba(128, 128, 128, 0.541);
-  font-size: 50px;
-}
-.controls > a {
-  color: rgba(128, 128, 128, 0.541);
-}
-.controls > a i {
-  font-size: 50px;
-}
-.controls > a i span {
+.header-top .logo {
   font-size: 24px;
-  font-family: "DS-Digital";
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+.header-top .logo i {
+  color: pink;
+}
+.header-top > a {
+  color: rgba(128, 128, 128, 0.541);
+}
+.header-top > a i {
+  font-size: 50px;
+}
+.header-top > a i span {
+  font-size: 24px;
   position: relative;
   top: 23px;
   right: 45px;
+  font-family: "DS-Digital";
 }
 
-.controls > a:hover {
-  color: cyan;
-  text-shadow: 0 0 5px cyan;
+.logo::before {
+  content: "TIME";
 }
 
-.clock {
-  width: 500px;
+.logo::after {
+  content: "SET";
+}
+
+.header-top > a:hover {
+  color: pink;
+  text-shadow: 0 0 5px pink;
+}
+
+.timer > i {
+  color: rgba(128, 128, 128, 0.541);
+  font-size: 50px;
+}
+
+.timer i:hover {
+  color: pink;
+  text-shadow: 0 0 5px pink;
+}
+
+.date-time {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-time .clock {
+  flex-basis: 500px;
   font-family: "DS-Digital";
   font-weight: bold;
   text-align: center;
@@ -1434,20 +1471,20 @@ body {
 }
 
 .clock:hover {
-  box-shadow: inset 0px -4px 10px rgba(0, 255, 255, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px -4px 10px pink, inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .date {
   font-size: 30px;
   padding-top: 10px;
-  color: cyan;
+  color: pink;
   letter-spacing: 5px;
 }
 
 #time {
   font-size: 80px;
   padding: 5px 20px;
-  color: cyan;
+  color: pink;
   letter-spacing: 7px;
 }
 
