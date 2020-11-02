@@ -88,6 +88,6 @@ function randomColor() {
   return Math.floor(Math.random() * 255);
 }
 
-colorchange.addEventListener(click, () => {
+colorchange.addEventListener('click', () => {
   document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
 });

@@ -1410,11 +1410,30 @@ a {
 .header-top-wrapper .gitfork {
   margin-left: auto;
 }
+@media (max-width: 500px) {
+  .header-top-wrapper .gitfork {
+    font-size: 0;
+  }
+}
+.header-top-wrapper .gitfork::before {
+  content: ">>";
+}
+.header-top-wrapper .gitfork::after {
+  content: "FORK";
+}
 .header-top-wrapper .change-color {
   margin-left: 20px;
 }
+@media (max-width: 500px) {
+  .header-top-wrapper .change-color {
+    font-size: 0;
+  }
+}
+.header-top-wrapper .change-color::before {
+  content: "Change";
+}
 .header-top-wrapper > a {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 2px;
@@ -1436,23 +1455,12 @@ a {
   content: "SET";
 }
 
-.gitfork::before {
-  content: ">>";
-}
-
-.gitfork::after {
-  content: "FORK";
-}
-
-.change-color:before {
-  content: "Change";
-}
-
 .date-time {
   flex: 1 1 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 5%;
 }
 .date-time .clock {
   font-family: "DS-Digital";
@@ -1474,6 +1482,11 @@ a {
   padding: 5px 20px;
   color: var(--main-color);
   letter-spacing: 7px;
+}
+@media (max-width: 500px) {
+  .date-time .clock #time {
+    font-size: 60px;
+  }
 }
 
 .clock-wrapper {

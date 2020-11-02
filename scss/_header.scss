@@ -10,15 +10,31 @@
   }
 
   & .gitfork {
+    @media (max-width: 500px) {
+      font-size: 0;
+    }
     margin-left: auto;
+
+    &::before {
+      content: '>>';
+    }
+    &::after {
+      content: 'FORK';
+    }
   }
 
   & .change-color {
+    @media (max-width: 500px) {
+      font-size: 0;
+    }
     margin-left: 20px;
+    &::before {
+      content: 'Change';
+    }
   }
 
   & > a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     font-style: italic;
     letter-spacing: 2px;
@@ -42,13 +58,13 @@
   content: 'SET';
 }
 
-.gitfork::before {
-  content: '>>';
-}
-.gitfork::after {
-  content: 'FORK';
-}
+// .gitfork::before {
+//   content: '>>';
+// }
+// .gitfork::after {
+//   content: 'FORK';
+// }
 
-.change-color:before {
-  content: 'Change';
-}
+// .change-color:before {
+//   content: 'Change';
+// }
