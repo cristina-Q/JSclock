@@ -81,7 +81,7 @@ displayTime();
 
 setInterval(displayTime, 1000);
 
-//change color
+//change page accent color
 const colorchange = document.getElementsByClassName('change-color');
 
 function randomColor() {

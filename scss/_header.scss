@@ -4,10 +4,17 @@
 
 .header-top-wrapper {
   display: flex;
-  justify-content: space-between;
 
   & .logo i {
     color: $main-color;
+  }
+
+  & .gitfork {
+    margin-left: auto;
+  }
+
+  & .change-color {
+    margin-left: 20px;
   }
 
   & > a {

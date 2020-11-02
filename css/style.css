@@ -1387,6 +1387,10 @@ a {
   content: "";
 }
 
+:root {
+  --main-color: cyan;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -1399,10 +1403,15 @@ a {
 
 .header-top-wrapper {
   display: flex;
-  justify-content: space-between;
 }
 .header-top-wrapper .logo i {
-  color: cyan;
+  color: var(--main-color);
+}
+.header-top-wrapper .gitfork {
+  margin-left: auto;
+}
+.header-top-wrapper .change-color {
+  margin-left: 20px;
 }
 .header-top-wrapper > a {
   font-size: 24px;
@@ -1412,8 +1421,8 @@ a {
   color: rgba(128, 128, 128, 0.541);
 }
 .header-top-wrapper > a:hover {
-  color: cyan;
-  text-shadow: 0 0 5px cyan;
+  color: var(--main-color);
+  text-shadow: 0 0 5px var(--main-color);
 }
 .header-top-wrapper > a i {
   font-size: 50px;
@@ -1445,31 +1454,52 @@ a {
   justify-content: center;
   align-items: center;
 }
-
 .date-time .clock {
-  flex-basis: 500px;
   font-family: "DS-Digital";
   font-weight: bold;
   text-align: center;
   box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-.clock:hover {
-  box-shadow: inset 0px -4px 10px cyan, inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+.date-time .clock:hover {
+  box-shadow: inset 0px -4px 10px var(--main-color), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-.date {
+.date-time .clock .date {
   font-size: 30px;
   padding-top: 10px;
-  color: cyan;
+  color: var(--main-color);
   letter-spacing: 5px;
 }
-
-#time {
+.date-time .clock #time {
   font-size: 80px;
   padding: 5px 20px;
-  color: cyan;
+  color: var(--main-color);
   letter-spacing: 7px;
+}
+
+.clock-wrapper {
+  flex-basis: 500px;
+  position: relative;
+}
+
+/* *********************** TIMER **** */
+.timer {
+  position: absolute;
+  left: 40px;
+  bottom: -79px;
+  left: 40px;
+}
+.timer > i {
+  color: rgba(128, 128, 128, 0.541);
+  font-size: 50px;
+}
+.timer > i:hover {
+  color: var(--main-color);
+  text-shadow: 0 0 5px var(--main-color);
+}
+
+.footer-wrapper {
+  height: 20vh;
+  box-shadow: inset 0px -34px 24px -24px var(--main-color);
 }
 
 body {
@@ -1478,16 +1508,6 @@ body {
   height: 100vh;
   background-color: #282828;
   font-family: "DS-Digital";
-}
-
-.timer > i {
-  color: rgba(128, 128, 128, 0.541);
-  font-size: 50px;
-}
-
-.timer i:hover {
-  color: cyan;
-  text-shadow: 0 0 5px cyan;
 }
 
 /*# sourceMappingURL=style.css.map */
