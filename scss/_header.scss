@@ -1,15 +1,26 @@
 .header-top {
-  padding: 30px 2% 0;
+  padding: 50px 10% 0;
+  box-shadow: inset 0px 34px 24px -24px $main-color;
 }
 
 .header-top-wrapper {
   display: flex;
 
-  & .logo i {
-    color: $main-color;
+  .logo {
+    i {
+      color: $main-color;
+    }
+
+    &::before {
+      content: 'TIME';
+    }
+
+    &::after {
+      content: 'SET';
+    }
   }
 
-  & .gitfork {
+  .gitfork {
     @media (max-width: 500px) {
       font-size: 0;
     }
@@ -23,7 +34,7 @@
     }
   }
 
-  & .change-color {
+  .change-color {
     @media (max-width: 500px) {
       font-size: 0;
     }
@@ -33,7 +44,7 @@
     }
   }
 
-  & > a {
+  > a {
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
@@ -51,20 +62,9 @@
   }
 }
 
-.logo::before {
-  content: 'TIME';
-}
-.logo::after {
-  content: 'SET';
-}
-
-// .gitfork::before {
-//   content: '>>';
+// .logo::before {
+//   content: 'TIME';
 // }
-// .gitfork::after {
-//   content: 'FORK';
-// }
-
-// .change-color:before {
-//   content: 'Change';
+// .logo::after {
+//   content: 'SET';
 // }
