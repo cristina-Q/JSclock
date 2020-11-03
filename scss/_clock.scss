@@ -7,6 +7,7 @@
   padding: 0 5%;
 
   .clock {
+    // width: 450px;
     font-family: 'DS-Digital';
     font-weight: bold;
     text-align: center;
@@ -22,7 +23,7 @@
 
     .date {
       font-size: 30px;
-      padding-top: 10px;
+      padding: 15px 15px 0;
       color: $main-color;
       letter-spacing: 5px;
     }
@@ -32,7 +33,7 @@
         font-size: 60px;
       }
       font-size: 80px;
-      padding: 5px 20px;
+      padding-bottom: 10px;
       color: $main-color;
       letter-spacing: 7px;
     }
@@ -40,7 +41,7 @@
 }
 
 .clock-wrapper {
-  padding-bottom: 3%;
+  margin-bottom: 30px;
 }
 
 /* *********************** TIMER **** */
