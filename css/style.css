@@ -1417,7 +1417,7 @@ a {
 .header-top-wrapper .gitfork {
   margin-left: auto;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .header-top-wrapper .gitfork {
     font-size: 0;
   }
@@ -1431,7 +1431,7 @@ a {
 .header-top-wrapper .change-color {
   margin-left: 20px;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .header-top-wrapper .change-color {
     font-size: 0;
   }
@@ -1483,7 +1483,7 @@ a {
   color: var(--main-color);
   letter-spacing: 7px;
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .date-time .clock #time {
     font-size: 60px;
   }
