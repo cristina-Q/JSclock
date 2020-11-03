@@ -9,13 +9,6 @@ const month = document.getElementById('month');
 const daynumber = document.getElementById('daynumber');
 const year = document.getElementById('year');
 
-let formatDigits = (digit) => {
-  if (digit < 10) {
-    digit = '0' + digit;
-  }
-  return digit;
-};
-
 function displayTime() {
   let date = new Date();
 
@@ -86,6 +79,13 @@ colorchange.addEventListener('click', () => {
 }); // ??? not working  - try change value of --main-color in css
 
 //************************* reuse functions
+
+function formatDigits(digit) {
+  if (digit < 10) {
+    digit = '0' + digit;
+  }
+  return digit;
+}
 
 function randomColor() {
   return Math.floor(Math.random() * 255);
