@@ -1,21 +1,32 @@
 const time = document.getElementById('time');
 
+//to do:
+// change all with const date = document.getElementById('date')
+// to be modified in HTML
+
 const weekday = document.getElementById('dayname');
 const month = document.getElementById('month');
 const daynumber = document.getElementById('daynumber');
 const year = document.getElementById('year');
 
+let formatDigits = (digit) => {
+  if (digit < 10) {
+    digit = '0' + digit;
+  }
+  return digit;
+};
+
 function displayTime() {
   let date = new Date();
 
-  let dayname = date.getDay(); // get a number aka 0 -> Sunday, 1 -> Monday etc.
+  let dayname = date.getDay();
   let monthnow = date.getMonth();
-  let daynow = date.getDate();
+  let daynow = formatDigits(date.getDate());
   let yearnow = date.getFullYear();
 
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
+  let hours = formatDigits(date.getHours());
+  let minutes = formatDigits(date.getMinutes());
+  let seconds = formatDigits(date.getSeconds());
 
   let daytime = 'am';
   if (hours > 12) {
@@ -25,17 +36,6 @@ function displayTime() {
 
   if (hours === 0) {
     hours = 12;
-  }
-
-  if (seconds < 10) {
-    seconds = '0' + seconds;
-  }
-
-  if (minutes < 10) {
-    minutes = '0' + minutes;
-  }
-  if (hours < 10) {
-    hours = '0' + hours;
   }
 
   let timenow = `${hours}:${minutes}:${seconds} ${daytime}`;
@@ -71,9 +71,6 @@ function displayTime() {
   monthnow = months[monthnow];
   month.textContent = `${monthnow}`;
 
-  if (daynow < 10) {
-    daynow = '0' + daynow;
-  }
   daynumber.textContent = `${daynow}`;
   year.textContent = `${yearnow}`;
 }
@@ -81,13 +78,15 @@ displayTime();
 
 setInterval(displayTime, 1000);
 
-//change page accent color
+//***************  change page accent color
 const colorchange = document.getElementsByClassName('change-color');
+
+colorchange.addEventListener('click', () => {
+  document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
+}); // ??? not working  - try change value of --main-color in css
+
+//************************* reuse functions
 
 function randomColor() {
   return Math.floor(Math.random() * 255);
 }
-
-colorchange.addEventListener('click', () => {
-  document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
-});
