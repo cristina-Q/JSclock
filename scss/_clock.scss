@@ -49,7 +49,7 @@
 .timer {
   display: flex;
   > i {
-    color: rgba(128, 128, 128, 0.541);
+    color: $neutral-color;
     font-size: 50px;
     &:hover {
       color: $main-color;

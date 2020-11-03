@@ -1,5 +1,5 @@
 .header-top {
-  padding: 50px 10% 0;
+  padding: 50px 10% 4%;
   box-shadow: inset 0px 32px 25px -25px $main-color;
 }
 
@@ -49,7 +49,7 @@
     font-weight: bold;
     font-style: italic;
     letter-spacing: 2px;
-    color: rgba(128, 128, 128, 0.541);
+    color: $neutral-color;
 
     &:hover {
       color: $main-color;

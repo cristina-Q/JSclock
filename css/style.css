@@ -1398,7 +1398,7 @@ a {
 }
 
 .header-top {
-  padding: 50px 10% 0;
+  padding: 50px 10% 4%;
   box-shadow: inset 0px 32px 25px -25px var(--main-color);
 }
 
