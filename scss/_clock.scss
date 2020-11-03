@@ -1,6 +1,7 @@
 .date-time {
   flex: 1 1 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 5%;
@@ -39,18 +40,13 @@
 }
 
 .clock-wrapper {
-  flex-basis: 500px;
-  position: relative;
+  padding-bottom: 3%;
 }
 
 /* *********************** TIMER **** */
 
 .timer {
-  position: absolute;
-  left: 40px;
-  bottom: -79px;
-  left: 40px;
-
+  display: flex;
   > i {
     color: rgba(128, 128, 128, 0.541);
     font-size: 50px;
