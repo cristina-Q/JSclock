@@ -63,7 +63,7 @@ setInterval(displayTime, 1000);
 const colorchange = document.querySelector('.change-color');
 
 colorchange.addEventListener('click', () => {
-  document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
+  document.querySelector(':root').style.setProperty('--main-color', getRandomColor());
 });
 
 //************************* reuse functions
@@ -75,6 +75,11 @@ function formatDigits(digit) {
   return digit;
 }
 
-function randomColor() {
-  return Math.floor(Math.random() * 255);
+function getRandomColor() {
+  let chars = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += chars[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
