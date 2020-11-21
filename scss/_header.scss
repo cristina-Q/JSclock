@@ -24,13 +24,9 @@
     @media (max-width: 576px) {
       font-size: 0;
     }
-    margin-left: auto;
 
     &::before {
       content: '>>';
-    }
-    &::after {
-      content: 'FORK';
     }
   }
 
@@ -38,7 +34,8 @@
     @media (max-width: 576px) {
       font-size: 0;
     }
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: 20px;
     &::before {
       content: 'Change';
     }

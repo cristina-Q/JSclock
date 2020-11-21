@@ -1414,9 +1414,6 @@ a {
 .header-top-wrapper .logo::after {
   content: "SET";
 }
-.header-top-wrapper .gitfork {
-  margin-left: auto;
-}
 @media (max-width: 576px) {
   .header-top-wrapper .gitfork {
     font-size: 0;
@@ -1425,11 +1422,9 @@ a {
 .header-top-wrapper .gitfork::before {
   content: ">>";
 }
-.header-top-wrapper .gitfork::after {
-  content: "FORK";
-}
 .header-top-wrapper .change-color {
-  margin-left: 20px;
+  margin-left: auto;
+  margin-right: 20px;
 }
 @media (max-width: 576px) {
   .header-top-wrapper .change-color {
