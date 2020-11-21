@@ -1,9 +1,4 @@
 const time = document.getElementById('time');
-
-//to do:
-// change all with const date = document.getElementById('date')
-// to be modified in HTML
-
 const weekday = document.getElementById('dayname');
 const month = document.getElementById('month');
 const daynumber = document.getElementById('daynumber');
@@ -34,15 +29,7 @@ function displayTime() {
   let timenow = `${hours}:${minutes}:${seconds} ${daytime}`;
   time.textContent = timenow;
 
-  let weekdays = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+  let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   let months = [
     'Jan.',
@@ -67,16 +54,17 @@ function displayTime() {
   daynumber.textContent = `${daynow}`;
   year.textContent = `${yearnow}`;
 }
+
 displayTime();
 
 setInterval(displayTime, 1000);
 
-//***************  change page accent color
-const colorchange = document.getElementsByClassName('change-color');
+//************************* change page accent color
+const colorchange = document.querySelector('.change-color');
 
 colorchange.addEventListener('click', () => {
   document.querySelector(':root').style.setProperty('--main-color', '#FFC0CB');
-}); // ??? not working  - try change value of --main-color in css
+});
 
 //************************* reuse functions
 

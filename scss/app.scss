@@ -8,9 +8,10 @@
 @import './footer';
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #282828;
+  background: #282828 url(../media/birds.svg) no-repeat center center;
   font-family: 'DS-Digital';
 }
