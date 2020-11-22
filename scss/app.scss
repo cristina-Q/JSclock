@@ -6,12 +6,13 @@
 @import './header';
 @import './clock';
 @import './footer';
+@import './svg-style';
 
 body {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #282828 url(../media/birds.svg) no-repeat center center;
+  background: #282828 no-repeat center center;
   font-family: 'DS-Digital';
 }
