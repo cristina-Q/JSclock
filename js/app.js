@@ -1,3 +1,8 @@
+let currentColor = localStorage.getItem('setColor');
+if (currentColor) {
+  document.querySelector(':root').style.setProperty('--main-color', currentColor);
+}
+
 const time = document.getElementById('time');
 const weekday = document.getElementById('dayname');
 const month = document.getElementById('month');
@@ -63,7 +68,9 @@ setInterval(displayTime, 1000);
 const colorchange = document.querySelector('.change-color');
 
 colorchange.addEventListener('click', () => {
-  document.querySelector(':root').style.setProperty('--main-color', getRandomColor());
+  let setcurrentColor = getRandomColor();
+  document.querySelector(':root').style.setProperty('--main-color', setcurrentColor);
+  localStorage.setItem(`setColor`, `${setcurrentColor}`);
 });
 
 //************************* reuse functions
