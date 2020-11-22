@@ -61,7 +61,6 @@ function displayTime() {
 }
 
 displayTime();
-
 setInterval(displayTime, 1000);
 
 //************************* change page accent color

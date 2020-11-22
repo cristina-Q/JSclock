@@ -1,6 +1,7 @@
-@import './reset'; // site reset
-@import './fonts'; // site fonts
-@import './ico'; // site icos
+@import './reset';
+@import './fonts';
+@import './ico';
+
 @import './variables';
 @import './shared';
 @import './header';
@@ -15,4 +16,6 @@ body {
   height: 100vh;
   background: #282828 no-repeat center center;
   font-family: 'DS-Digital';
+  color: $neutral-color;
+  font-size: 16px;
 }

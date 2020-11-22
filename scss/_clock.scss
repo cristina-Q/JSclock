@@ -6,51 +6,68 @@
   align-items: center;
   padding: 0 5%;
 
-  .clock {
-    // width: 450px;
-    font-family: 'DS-Digital';
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5),
-      -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
-    &:hover {
-      box-shadow: inset 0px -4px 10px $main-color, inset 4px 4px 10px rgba(0, 0, 0, 0.5),
-        inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .date {
-      font-size: 30px;
-      padding: 15px 30px 0;
-      color: $main-color;
-      letter-spacing: 5px;
-    }
-
-    #time {
-      @media (max-width: 576px) {
-        font-size: 60px;
+  .clock-wrapper {
+    .clock {
+      margin-bottom: 40px;
+      font-family: 'DS-Digital';
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5),
+        -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
+      &:hover {
+        box-shadow: inset 0px -4px 10px $main-color, inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+          inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
       }
-      font-size: 80px;
-      padding-bottom: 10px;
-      color: $main-color;
-      letter-spacing: 5px;
+
+      .date {
+        font-size: 30px;
+        padding: 15px 30px 0;
+        color: $main-color;
+        letter-spacing: 5px;
+      }
+
+      #time {
+        @media (max-width: 576px) {
+          font-size: 60px;
+        }
+        font-size: 80px;
+        padding-bottom: 10px;
+        color: $main-color;
+        letter-spacing: 5px;
+      }
     }
   }
 }
 
-.clock-wrapper {
-  margin-bottom: 30px;
-}
+/*----------------------  user controls  ---------- */
 
-/* *********************** TIMER **** */
-
-.timer {
+.controls-wrapper {
   display: flex;
-  > i {
-    color: $neutral-color;
-    font-size: 50px;
+  justify-content: space-around;
+
+  .freez-time {
     &:hover {
       color: $main-color;
-      text-shadow: 0 0 5px $main-color;
+      outline: inset thick rgba(67, 67, 67, 0.3);
+      box-shadow: inset 0px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+        inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5),
+      -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .alarm {
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5),
+      -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
+    &:hover {
+      color: $main-color;
+      outline: inset thick rgba(67, 67, 67, 0.3);
+      box-shadow: inset 0px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+        inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
     }
   }
 }
