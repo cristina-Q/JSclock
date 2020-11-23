@@ -45,6 +45,10 @@
   display: flex;
   justify-content: space-around;
 
+  a {
+    color: $neutral-color;
+  }
+
   .freez-time {
     &:hover {
       color: $main-color;
@@ -58,7 +62,7 @@
       -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
   }
 
-  .alarm {
+  .alarm-time {
     padding: 10px;
     font-size: 25px;
     box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5),
