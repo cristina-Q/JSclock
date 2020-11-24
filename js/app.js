@@ -3,6 +3,7 @@ if (currentColor) {
   document.querySelector(':root').style.setProperty('--main-color', currentColor);
 }
 
+const date = document.querySelector('.date');
 const time = document.querySelector('#time');
 const weekday = document.getElementById('dayname');
 const month = document.getElementById('month');
@@ -64,11 +65,17 @@ let startDisplayTime = setInterval(displayTime, 1000);
 
 //--------------  change page accent color  ----------
 const colorchange = document.querySelector('.change-color');
+const colororiginal = document.querySelector('.logo');
 
 colorchange.addEventListener('click', () => {
   let setcurrentColor = getRandomColor();
   document.querySelector(':root').style.setProperty('--main-color', setcurrentColor);
   localStorage.setItem(`setColor`, `${setcurrentColor}`);
+});
+
+colororiginal.addEventListener('click', (e) => {
+  document.querySelector(':root').style.setProperty('--main-color', 'cyan');
+  e.preventDefault();
 });
 
 // --------------------------------------------------
@@ -90,7 +97,7 @@ function getRandomColor() {
   return color;
 }
 
-//--------------  freez time / alarm  ----------------------
+//--------------  freez time   ----------------------
 
 const btnFreez = document.querySelector('.freez');
 const btnAlarm = document.querySelector('.alarm');
@@ -113,11 +120,8 @@ function clickHandler(e) {
     time.textContent = getTimeDifference(difference);
     btnFreez.removeEventListener('click', clickHandler);
     document.querySelector('.freez-time').textContent = 'to CLOCK';
-
-    btnAlarm.addEventListener('click', (e) => {
-      document.querySelector('.alarm-time').textContent = 'STILL COUNT';
-      e.preventDefault();
-    });
+    document.querySelector('.alarm-time').textContent = 'STILL COUNT';
+    btnAlarm.removeEventListener('click', clickHandler);
 
     e.preventDefault();
   });
@@ -141,3 +145,28 @@ function getTimeDifference(diff) {
 
   return `${formattedhours} : ${formattedminutes} : ${formattedseconds}`;
 }
+
+//--------------  set alarm   ----------------------
+btnAlarm.addEventListener('click', function setAlarm(e) {
+  clearInterval(startDisplayTime);
+  time.textContent = '';
+  document.querySelector('.wrapper-picktime').classList.remove('d-none');
+
+  let inputhour = document.createElement('div');
+  inputhour.setAttribute('type', 'number');
+
+  // const temppickhour
+
+  // const documentFragment = new DocumentFragment();
+  // documentFragment.innerHTML = '';
+
+  // const template =
+
+  // documentFragment.innerHTML += template;
+  // seatHand.innerHTML = documentFragment.innerHTML;
+  document.querySelector('.alarm-time').textContent = 'ALARM ON';
+  document.querySelector('.alarm-time').style.color = 'var(--main-color)';
+  document.querySelector('.freez-time').textContent = 'SET ALARM';
+
+  e.preventDefault();
+});

@@ -1397,6 +1397,37 @@ a {
   max-width: 1290px;
 }
 
+.wrapper-picktime {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.wrapper-picktime datalist {
+  width: 20px;
+  background-color: transparent;
+}
+
+.box {
+  text-align: center;
+  background-color: transparent;
+  font-size: 70px;
+  color: var(--main-color);
+  letter-spacing: 5px;
+  box-shadow: 2px solid var(--main-color);
+  width: 120px;
+  height: 80px;
+  overflow-y: scroll;
+}
+@media (max-width: 576px) {
+  .box {
+    font-size: 60px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
 .header-top {
   padding: 50px 10% 4%;
   box-shadow: inset 0px 32px 25px -25px var(--main-color);
@@ -1475,9 +1506,9 @@ a {
 }
 .date-time .clock-wrapper .clock #time {
   font-size: 80px;
-  padding-bottom: 10px;
   color: var(--main-color);
   letter-spacing: 5px;
+  padding-bottom: 10px;
 }
 @media (max-width: 576px) {
   .date-time .clock-wrapper .clock #time {

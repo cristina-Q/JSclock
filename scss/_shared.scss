@@ -3,3 +3,35 @@
   width: 100%;
   max-width: 1290px;
 }
+
+.wrapper-picktime {
+  datalist {
+    width: 20px;
+    background-color: transparent;
+  }
+
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.box {
+  text-align: center;
+  background-color: transparent;
+
+  @media (max-width: 576px) {
+    font-size: 60px;
+  }
+
+  font-size: 70px;
+  color: $main-color;
+  letter-spacing: 5px;
+  box-shadow: 2px solid $main-color;
+  width: 120px;
+  height: 80px;
+  overflow-y: scroll;
+}
+
+.d-none {
+  display: none !important;
+}
