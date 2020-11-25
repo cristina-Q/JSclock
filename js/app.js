@@ -99,29 +99,31 @@ function getRandomColor() {
 
 //--------------  freez time   ----------------------
 
-const btnFreez = document.querySelector('.freez');
-const btnAlarm = document.querySelector('.alarm');
+const btnLeft = document.querySelector('.btn-left');
+const btnRight = document.querySelector('.btn-right');
 
-btnFreez.addEventListener('click', clickHandler);
+btnLeft.addEventListener('click', getFreez);
 
-function clickHandler(e) {
+function getFreez(e) {
   clearInterval(startDisplayTime);
   let startfreez = new Date().getTime();
   time.textContent = 'FREEZ';
   document.querySelector('.freez-time').textContent = 'FREEZ ON';
   document.querySelector('.freez-time').style.color = 'var(--main-color)';
-  document.querySelector('.alarm-time').textContent = 'FREEZ FOR';
+  document.querySelector('.alarm-time').textContent = 'DEFREEZ';
 
-  btnAlarm.addEventListener('click', (e) => {
-    document.querySelector('.alarm-time').style.color = 'var(--main-color)';
+  //now the second button start to listen inside first event propagation
+  btnRight.addEventListener('click', (e) => {
+    document.querySelector('.wrapper-picktime').classList.add('d-none');
     let stopfreez = new Date().getTime();
     let difference = Math.abs(startfreez - stopfreez);
-
     time.textContent = getTimeDifference(difference);
-    btnFreez.removeEventListener('click', clickHandler);
+
+    document.querySelector('.alarm-time').style.color = 'var(--main-color)';
     document.querySelector('.freez-time').textContent = 'to CLOCK';
     document.querySelector('.alarm-time').textContent = 'STILL COUNT';
-    btnAlarm.removeEventListener('click', clickHandler);
+
+    btnLeft.removeEventListener('click', getFreez);
 
     e.preventDefault();
   });
@@ -147,26 +149,40 @@ function getTimeDifference(diff) {
 }
 
 //--------------  set alarm   ----------------------
-btnAlarm.addEventListener('click', function setAlarm(e) {
+
+btnRight.addEventListener('click', getAlarm);
+
+function getAlarm(e) {
   clearInterval(startDisplayTime);
-  time.textContent = '';
-  document.querySelector('.wrapper-picktime').classList.remove('d-none');
-
-  let inputhour = document.createElement('div');
-  inputhour.setAttribute('type', 'number');
-
-  // const temppickhour
-
-  // const documentFragment = new DocumentFragment();
-  // documentFragment.innerHTML = '';
-
-  // const template =
-
-  // documentFragment.innerHTML += template;
-  // seatHand.innerHTML = documentFragment.innerHTML;
-  document.querySelector('.alarm-time').textContent = 'ALARM ON';
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
-  document.querySelector('.freez-time').textContent = 'SET ALARM';
+  document.querySelector('.alarm-time').textContent = 'ALARM MOD';
+  document.querySelector('.freez-time').textContent = 'TO CLOCK';
+  time.textContent = '';
+  date.textContent = 'please, set alarm';
+  document.querySelector('.wrapper-picktime').classList.remove('d-none');
+  btnLeft.removeEventListener('click', getFreez);
+
+  let inputhour = document.querySelector('.pick-hour').value;
+  let inputminute = document.querySelector('.pick-minutes').value;
+  let inputstat = document.querySelector('.pick-ampm').value;
 
   e.preventDefault();
-});
+}
+
+/*
+var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+		sound.loop = true;
+let inputhour = document.createElement('div');
+inputhour.setAttribute('type', 'number');
+
+const temppickhour
+
+const documentFragment = new DocumentFragment();
+documentFragment.innerHTML = '';
+
+const template =
+
+documentFragment.innerHTML += template;
+seatHand.innerHTML = documentFragment.innerHTML;
+document.querySelector('.alarm-time').textContent = 'ALARM ON';
+*/
