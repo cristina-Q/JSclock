@@ -1524,22 +1524,22 @@ a {
 .controls-wrapper a {
   color: rgba(128, 128, 128, 0.7);
 }
-.controls-wrapper .freez-time {
+.controls-wrapper .btn-left {
   padding: 10px;
   font-size: 25px;
   box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
-.controls-wrapper .freez-time:hover {
+.controls-wrapper .btn-left:hover {
   color: var(--main-color);
   outline: inset thick rgba(67, 67, 67, 0.3);
   box-shadow: inset 0px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
-.controls-wrapper .alarm-time {
+.controls-wrapper .btn-right {
   padding: 10px;
   font-size: 25px;
   box-shadow: 8px -7px 11px 0px rgba(67, 67, 67, 0.5), 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(67, 67, 67, 0.3), 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
-.controls-wrapper .alarm-time:hover {
+.controls-wrapper .btn-right:hover {
   color: var(--main-color);
   outline: inset thick rgba(67, 67, 67, 0.3);
   box-shadow: inset 0px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);

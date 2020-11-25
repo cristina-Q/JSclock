@@ -113,7 +113,7 @@ function getFreez(e) {
   document.querySelector('.alarm-time').textContent = 'DEFREEZ';
 
   //now the second button start to listen inside first event propagation
-  btnRight.addEventListener('click', (e) => {
+  btnRight.addEventListener('click', function foo(e) {
     document.querySelector('.wrapper-picktime').classList.add('d-none');
     let stopfreez = new Date().getTime();
     let difference = Math.abs(startfreez - stopfreez);
@@ -124,6 +124,7 @@ function getFreez(e) {
     document.querySelector('.alarm-time').textContent = 'STILL COUNT';
 
     btnLeft.removeEventListener('click', getFreez);
+    // btnRight.removeEventListener('click', foo);
 
     e.preventDefault();
   });
@@ -149,17 +150,18 @@ function getTimeDifference(diff) {
 }
 
 //--------------  set alarm   ----------------------
-
 btnRight.addEventListener('click', getAlarm);
 
 function getAlarm(e) {
   clearInterval(startDisplayTime);
+
+  document.querySelector('.wrapper-picktime').classList.remove('d-none');
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
   document.querySelector('.freez-time').textContent = 'TO CLOCK';
   time.textContent = '';
   date.textContent = 'please, set alarm';
-  document.querySelector('.wrapper-picktime').classList.remove('d-none');
+
   btnLeft.removeEventListener('click', getFreez);
 
   let inputhour = document.querySelector('.pick-hour').value;
