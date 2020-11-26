@@ -10,11 +10,16 @@
       padding: 10px 20px;
       cursor: pointer;
       font-size: 1.5rem;
-      color: black;
-      background-color: $main-color;
+      color: $main-color;
       outline: 5px ridge rgb(161, 168, 167);
-      border-top-right-radius: 0;
-      border-top-left-radius: 99%;
+
+      &:hover {
+        background-color: $main-color;
+        color: black;
+        border-top-right-radius: 0;
+        border-top-left-radius: 99%;
+        transition: background-color 0.5s ease;
+      }
     }
   }
 
@@ -37,5 +42,5 @@
   box-shadow: 2px solid $main-color;
   width: 120px;
   height: 80px;
-  overflow-y: scroll;
+  cursor: pointer;
 }

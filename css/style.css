@@ -1552,11 +1552,15 @@ a {
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1.5rem;
-  color: black;
-  background-color: var(--main-color);
+  color: var(--main-color);
   outline: 5px ridge #a1a8a7;
+}
+.wrapper-picktime .listampm option:hover {
+  background-color: var(--main-color);
+  color: black;
   border-top-right-radius: 0;
   border-top-left-radius: 99%;
+  transition: background-color 0.5s ease;
 }
 
 .box {
@@ -1568,7 +1572,7 @@ a {
   box-shadow: 2px solid var(--main-color);
   width: 120px;
   height: 80px;
-  overflow-y: scroll;
+  cursor: pointer;
 }
 @media (max-width: 576px) {
   .box {
