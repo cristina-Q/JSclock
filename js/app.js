@@ -154,25 +154,51 @@ btnRight.addEventListener('click', getAlarm);
 
 function getAlarm(e) {
   clearInterval(startDisplayTime);
+  btnLeft.removeEventListener('click', getFreez);
 
+  date.textContent = 'please, set alarm';
+  time.textContent = '';
   document.querySelector('.wrapper-picktime').classList.remove('d-none');
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
   document.querySelector('.freez-time').textContent = 'TO CLOCK';
-  time.textContent = '';
-  date.textContent = 'please, set alarm';
 
-  btnLeft.removeEventListener('click', getFreez);
+  const inputlist = document.querySelector('#inputlist');
+  inputlist.addEventListener('focus', (e) => {
+    document.querySelector('.listampm').style.display = 'flex';
+    e.preventDefault;
+  });
+  for (let option of listampm.options) {
+    option.onclick = function () {
+      inputlist.value = this.value;
+      listampm.style.display = 'none';
+    };
+  }
 
-  let inputhour = document.querySelector('.pick-hour').value;
-  let inputminute = document.querySelector('.pick-minutes').value;
-  let inputstat = document.querySelector('.pick-ampm').value;
+  // datalist.style.width = input.offsetWidth + 'px';
+  // datalist.style.left = input.offsetLeft + 'px';
+  // datalist.style.top = input.offsetTop + input.offsetHeight + 'px';
+
+  // get use only arrows/spinners on input
+
+  // hourinput = document.querySelector('.pick-hour');
+  // minuteinput = document.querySelector('.pick-minutes');
+
+  // myInputTag.onkeydown = onlyUpDownKeys ;
+
+  // function onlyUpDownKeys(e) {
+  //   (e.keyCode===38 || e.keyCode===40) ? updateValue(e): e.preventDefault();
+  // }
+  // let inputvalhour = document.querySelector('.pick-hour').value;
+  // let inputvalminute = document.querySelector('.pick-minutes').value;
+  // let inputvalampm = document.querySelector('.pick-ampm').value;
 
   e.preventDefault();
 }
 
+// console.log(listampm.parentElement.nodeName) --> <form>
 /*
-var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
+  var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
 		sound.loop = true;
 let inputhour = document.createElement('div');
 inputhour.setAttribute('type', 'number');

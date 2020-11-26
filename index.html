@@ -62,13 +62,14 @@
         <div id="time">
         </div>
 
-        <div class="wrapper-picktime d-none">
+        <form class="wrapper-picktime d-none">
           <input
             type='number'
-            min=1
-            max=12
+            min=0
+            max=24
             class="box pick-hour"
             placeholder='h'
+            required
           >
           <input
             type='number'
@@ -76,15 +77,24 @@
             max=59
             class="box pick-minutes"
             placeholder='m'
+            required
           >
           <input
-            type="text"
+            id="inputlist"
+            list=""
             class="box pick-ampm"
-            minlength="2"
-            maxlength="2"
-            value="am"
+            name="option"
+            autocomplete="off"
+            placeholder="am"
           >
-        </div>
+          <datalist
+            id="listampm"
+            class="listampm"
+          >
+            <option>am</option>
+            <option>pm</option>
+          </datalist>
+        </form>
       </div>
 
 
