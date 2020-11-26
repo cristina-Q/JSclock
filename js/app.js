@@ -150,6 +150,7 @@ function getTimeDifference(diff) {
 }
 
 //--------------  set alarm   ----------------------
+
 btnRight.addEventListener('click', getAlarm);
 
 function getAlarm(e) {
@@ -163,54 +164,50 @@ function getAlarm(e) {
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
   document.querySelector('.freez-time').textContent = 'TO CLOCK';
 
-  const inputlist = document.querySelector('#inputlist');
-  inputlist.addEventListener('click', (e) => {
-    document.querySelector('.listampm').style.display = 'block';
+  // ------------------------------work with inputs
+  const inputlistamp = document.querySelector('.pick-ampm');
+  const datalistampm = document.querySelector('.listampm');
+  const inputlistmin = document.querySelector('.pick-minutes');
+  const datalistminute = document.querySelector('.listminute');
+  const inputlisthour = document.querySelector('.pick-hour');
+  const datalisthour = document.querySelector('.listhour');
+
+  //---------user input amp
+  inputlistamp.addEventListener('click', (e) => {
+    datalistampm.style.display = 'block';
+    for (let option of datalistampm.options) {
+      option.onclick = function () {
+        inputlistamp.value = this.value;
+        datalistampm.style.display = 'none';
+      };
+    }
     e.preventDefault;
   });
-  for (let option of listampm.options) {
-    option.onclick = function () {
-      inputlist.value = this.value;
-      listampm.style.display = 'none';
-    };
-  }
 
-  // datalist.style.width = input.offsetWidth + 'px';
-  // datalist.style.left = input.offsetLeft + 'px';
-  // datalist.style.top = input.offsetTop + input.offsetHeight + 'px';
+  //---------user input minute
+  inputlistmin.addEventListener('click', (e) => {
+    datalistminute.style.display = 'block';
+    for (let option of datalistminute.options) {
+      option.onclick = function () {
+        inputlistmin.value = this.value;
+        datalistminute.style.display = 'none';
+      };
+    }
+    e.preventDefault;
+  });
 
-  // get use only arrows/spinners on input
+  //---------user input hour
+  inputlisthour.addEventListener('click', (e) => {
+    datalisthour.style.display = 'block';
+    for (let option of datalisthour.options) {
+      option.onclick = function () {
+        inputlisthour.value = this.value;
+        datalisthour.style.display = 'none';
+      };
+    }
+    e.preventDefault;
+  });
 
-  // hourinput = document.querySelector('.pick-hour');
-  // minuteinput = document.querySelector('.pick-minutes');
-
-  // myInputTag.onkeydown = onlyUpDownKeys ;
-
-  // function onlyUpDownKeys(e) {
-  //   (e.keyCode===38 || e.keyCode===40) ? updateValue(e): e.preventDefault();
-  // }
-  // let inputvalhour = document.querySelector('.pick-hour').value;
-  // let inputvalminute = document.querySelector('.pick-minutes').value;
-  // let inputvalampm = document.querySelector('.pick-ampm').value;
-
+  //
   e.preventDefault();
 }
-
-// console.log(listampm.parentElement.nodeName) --> <form>
-/*
-  var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
-		sound.loop = true;
-let inputhour = document.createElement('div');
-inputhour.setAttribute('type', 'number');
-
-const temppickhour
-
-const documentFragment = new DocumentFragment();
-documentFragment.innerHTML = '';
-
-const template =
-
-documentFragment.innerHTML += template;
-seatHand.innerHTML = documentFragment.innerHTML;
-document.querySelector('.alarm-time').textContent = 'ALARM ON';
-*/
