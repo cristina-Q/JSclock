@@ -164,8 +164,8 @@ function getAlarm(e) {
   document.querySelector('.freez-time').textContent = 'TO CLOCK';
 
   const inputlist = document.querySelector('#inputlist');
-  inputlist.addEventListener('focus', (e) => {
-    document.querySelector('.listampm').style.display = 'flex';
+  inputlist.addEventListener('click', (e) => {
+    document.querySelector('.listampm').style.display = 'block';
     e.preventDefault;
   });
   for (let option of listampm.options) {

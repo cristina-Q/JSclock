@@ -71,18 +71,23 @@
             placeholder='h'
             required
           >
+
+
           <input
-            type='number'
-            min=0
-            max=59
             class="box pick-minutes"
+            type='number'
+            list=""
+            min="0"
+            max="0"
             placeholder='m'
             required
           >
+
+
           <input
             id="inputlist"
-            list=""
             class="box pick-ampm"
+            list=""
             name="option"
             autocomplete="off"
             placeholder="am"
@@ -94,6 +99,18 @@
             <option>am</option>
             <option>pm</option>
           </datalist>
+
+          <div class="wrapper-submit">
+            <button
+              class="box-button"
+              type="submit"
+            >set alarm</button>
+
+            <button
+              class="box-button"
+              type="reset"
+            >reset</button>
+          </div>
         </form>
       </div>
 

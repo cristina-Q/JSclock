@@ -1537,9 +1537,35 @@ a {
 }
 
 .wrapper-picktime {
-  display: flex;
   justify-content: space-around;
   padding: 20px;
+}
+.wrapper-picktime .wrapper-submit .box-button {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: inherit;
+  margin: 5% 5% 0;
+  padding: 7px 20px;
+  background-color: var(--main-color);
+  outline: inset thick rgba(67, 67, 67, 0.3);
+  box-shadow: inset 0px -4px 10px rgba(67, 67, 67, 0.5), inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -4px -4px 10px rgba(67, 67, 67, 0.3), inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.wrapper-picktime .box {
+  text-align: center;
+  background-color: transparent;
+  font-size: 70px;
+  color: var(--main-color);
+  letter-spacing: 5px;
+  box-shadow: 2px solid var(--main-color);
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .wrapper-picktime .box {
+    font-size: 60px;
+  }
 }
 .wrapper-picktime .listampm {
   position: absolute;
@@ -1561,23 +1587,6 @@ a {
   border-top-right-radius: 0;
   border-top-left-radius: 99%;
   transition: background-color 0.5s ease;
-}
-
-.box {
-  text-align: center;
-  background-color: transparent;
-  font-size: 70px;
-  color: var(--main-color);
-  letter-spacing: 5px;
-  box-shadow: 2px solid var(--main-color);
-  width: 120px;
-  height: 80px;
-  cursor: pointer;
-}
-@media (max-width: 576px) {
-  .box {
-    font-size: 60px;
-  }
 }
 
 body {
