@@ -68,9 +68,11 @@
           <input
             class="box pick-hour"
             list=""
-            name="houroption"
+            name="alarmhour"
             placeholder='h'
             autocomplete="off"
+            inputmode="none"
+            readonly
             required
           >
           <datalist class="listhour datalist">
@@ -106,9 +108,11 @@
           <input
             class="box pick-minutes"
             list=""
-            name="minoption"
-            placeholder='m'
+            name="alarmmin"
+            placeholder="m"
             autocomplete="off"
+            inputmode="none"
+            readonly
             required
           >
           <datalist class="listminute datalist">
@@ -177,9 +181,11 @@
           <input
             class="box pick-ampm"
             list=""
-            name="option"
+            name="alarmampm"
             autocomplete="off"
             placeholder="am"
+            inputmode="none"
+            readonly
           >
           <datalist class="listampm">
             <option>am</option>
@@ -229,6 +235,7 @@
   <footer>
     <div class="footer-wrapper">
       <div class="footer">
+        <p class="credit">by qMole -> Link units 2021@All rights reserved</p>
       </div>
     </div>
   </footer>

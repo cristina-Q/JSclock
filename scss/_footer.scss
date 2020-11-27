@@ -1,4 +1,9 @@
 .footer-wrapper {
   height: 15vh;
   box-shadow: inset 0px -34px 24px -24px $main-color;
+
+  .footer p {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  }
 }
