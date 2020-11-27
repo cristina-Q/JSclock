@@ -1463,6 +1463,7 @@ a {
 }
 .date-time .clock-wrapper {
   position: relative;
+  max-width: 460px;
 }
 .date-time .clock-wrapper .clock {
   margin-bottom: 40px;
@@ -1614,6 +1615,15 @@ a {
   border-top-right-radius: 0;
   border-top-left-radius: 80%;
   transition: background-color 0.5s ease;
+}
+
+.alarm-on {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  padding: 2%;
+}
+.alarm-on i {
+  color: red;
 }
 
 body {

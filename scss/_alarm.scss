@@ -82,3 +82,12 @@
     }
   }
 }
+
+.alarm-on {
+  font-size: 1.5rem;
+  color: $main-color;
+  padding: 2%;
+  i {
+    color: red;
+  }
+}

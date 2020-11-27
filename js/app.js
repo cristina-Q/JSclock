@@ -3,6 +3,8 @@ if (currentColor) {
   document.querySelector(':root').style.setProperty('--main-color', currentColor);
 }
 
+const alarmsound = new Audio('./media/crows.mp3');
+
 const date = document.querySelector('.date');
 const time = document.querySelector('#time');
 const weekday = document.getElementById('dayname');
@@ -35,9 +37,9 @@ function displayTime() {
   let timenow = `${hours}:${minutes}:${seconds} ${daytime}`;
   time.textContent = timenow;
 
-  let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-  let months = [
+  const months = [
     'Jan.',
     'Feb.',
     'Mar.',
@@ -113,7 +115,7 @@ function getFreez(e) {
   document.querySelector('.alarm-time').textContent = 'DEFREEZ';
 
   //now the second button start to listen inside first event propagation
-  btnRight.addEventListener('click', function foo(e) {
+  btnRight.addEventListener('click', (e) => {
     document.querySelector('.wrapper-picktime').classList.add('d-none');
     let stopfreez = new Date().getTime();
     let difference = Math.abs(startfreez - stopfreez);
@@ -124,7 +126,6 @@ function getFreez(e) {
     document.querySelector('.alarm-time').textContent = 'STILL COUNT';
 
     btnLeft.removeEventListener('click', getFreez);
-    // btnRight.removeEventListener('click', foo);
 
     e.preventDefault();
   });
@@ -150,46 +151,34 @@ function getTimeDifference(diff) {
 }
 
 //--------------  set alarm   ----------------------
+// work with inputs
+const alarmform = document.querySelector('#alarmform');
+const usersetalarm = document.querySelector('#usersetalarm');
+
+const inputmin = document.querySelector('.pick-minutes');
+const inputhour = document.querySelector('.pick-hour');
+const datalistminute = document.querySelector('.listminute');
+const datalisthour = document.querySelector('.listhour');
 
 btnRight.addEventListener('click', getAlarm);
 
 function getAlarm(e) {
   clearInterval(startDisplayTime);
   btnLeft.removeEventListener('click', getFreez);
-
   date.textContent = 'please, set alarm';
+
   time.textContent = '';
   document.querySelector('.wrapper-picktime').classList.remove('d-none');
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
   document.querySelector('.freez-time').textContent = 'TO CLOCK';
 
-  // ------------------------------work with inputs
-  const inputlistamp = document.querySelector('.pick-ampm');
-  const datalistampm = document.querySelector('.listampm');
-  const inputlistmin = document.querySelector('.pick-minutes');
-  const datalistminute = document.querySelector('.listminute');
-  const inputlisthour = document.querySelector('.pick-hour');
-  const datalisthour = document.querySelector('.listhour');
-
-  //---------user input amp
-  inputlistamp.addEventListener('click', (e) => {
-    datalistampm.style.display = 'block';
-    for (let option of datalistampm.options) {
-      option.onclick = function () {
-        inputlistamp.value = this.value;
-        datalistampm.style.display = 'none';
-      };
-    }
-    e.preventDefault;
-  });
-
   //---------user input minute
-  inputlistmin.addEventListener('click', (e) => {
+  inputmin.addEventListener('click', (e) => {
     datalistminute.style.display = 'block';
     for (let option of datalistminute.options) {
       option.onclick = function () {
-        inputlistmin.value = this.value;
+        inputmin.value = this.value;
         datalistminute.style.display = 'none';
       };
     }
@@ -197,17 +186,34 @@ function getAlarm(e) {
   });
 
   //---------user input hour
-  inputlisthour.addEventListener('click', (e) => {
+  inputhour.addEventListener('click', (e) => {
     datalisthour.style.display = 'block';
     for (let option of datalisthour.options) {
       option.onclick = function () {
-        inputlisthour.value = this.value;
+        inputhour.value = this.value;
         datalisthour.style.display = 'none';
       };
     }
     e.preventDefault;
   });
 
-  //
+  usersetalarm.addEventListener('click', setAlarm);
+
+  function setAlarm(e) {
+    if (userhour !== 0 && usermin !== 0) {
+      document.querySelector('.alarm-on').innerHTML += `${userhour} : ${usermin}`;
+      document.querySelector('.alarm-on').classList.remove('d-none');
+      document.querySelector('.wrapper-picktime').classList.add('d-none');
+      date.textContent = 'ALARM IS SET';
+
+      let userhour = Number(inputhour.value);
+      let usermin = Number(inputmin.value);
+
+      btnRight.removeEventListener('click', getAlarm);
+      usersetalarm.removeEventListener('click', setAlarm);
+    }
+    e.preventDefault();
+  }
+
   e.preventDefault();
 }

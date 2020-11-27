@@ -51,6 +51,11 @@
 
   <main class="date-time">
     <div class="clock-wrapper">
+      <div class="alarm-on d-none">
+        <i class="im im-bell-active"></i>
+        Alarm is active |
+      </div>
+
       <div class="clock">
         <div class="date">
           <span id="dayname">Saturday </span>
@@ -62,7 +67,10 @@
         <div id="time">
         </div>
 
-        <form class="wrapper-picktime d-none">
+        <form
+          id="alarmform"
+          class="wrapper-picktime d-none"
+        >
 
           <!-- user input hours -->
           <input
@@ -177,24 +185,10 @@
             <option>59</option>
           </datalist>
 
-          <!-- user input ampm -->
-          <input
-            class="box pick-ampm"
-            list=""
-            name="alarmampm"
-            autocomplete="off"
-            placeholder="am"
-            inputmode="none"
-            readonly
-          >
-          <datalist class="listampm">
-            <option>am</option>
-            <option>pm</option>
-          </datalist>
-
           <!-- user submit buttons -->
           <div class="wrapper-submit">
             <button
+              id="usersetalarm"
               class="box-button"
               type="submit"
             >set alarm</button>
@@ -209,7 +203,10 @@
       </div>
 
 
-      <div class="controls-wrapper">
+      <d
+        iv
+        class="controls-wrapper"
+      >
         <a
           href="/"
           class="btn-left"
@@ -227,7 +224,7 @@
             Set Alarm
           </div>
         </a>
-      </div>
+    </div>
     </div>
 
   </main>
@@ -235,7 +232,7 @@
   <footer>
     <div class="footer-wrapper">
       <div class="footer">
-        <p class="credit">by qMole -> Link units 2021@All rights reserved</p>
+        <p class="credit d-none">by qMole -> Link units 2021@All rights reserved</p>
       </div>
     </div>
   </footer>
