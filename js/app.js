@@ -151,16 +151,42 @@ function getTimeDifference(diff) {
 }
 
 //--------------  set alarm   ----------------------
-// work with inputs
-const alarmform = document.querySelector('#alarmform');
-const usersetalarm = document.querySelector('#usersetalarm');
 
+const usersetalarm = document.querySelector('#usersetalarm');
 const inputmin = document.querySelector('.pick-minutes');
 const inputhour = document.querySelector('.pick-hour');
 const datalistminute = document.querySelector('.listminute');
 const datalisthour = document.querySelector('.listhour');
+const turnoffalarm = document.querySelector('.turnoff');
+const alarmcontrols = document.querySelector('.wrapper-alarm');
+
+let userinputhour;
+let userinputmin;
+
+let check = setTimeout(checkAlarm, 10000);
 
 btnRight.addEventListener('click', getAlarm);
+
+turnoffalarm.addEventListener('click', turnOff);
+
+function turnOff(e) {
+  alarmsound.pause();
+  alarmsound.currentTime = 0;
+  localStorage.clear();
+
+  e.preventDefault();
+}
+
+function checkAlarm() {
+  let datenow = new Date();
+  let h = datenow.getHours();
+  let m = datenow.getMinutes();
+
+  if (userinputhour <= h && userinputmin <= m) {
+    alarmsound.play();
+    alarmsound.play();
+  }
+}
 
 function getAlarm(e) {
   clearInterval(startDisplayTime);
@@ -197,23 +223,17 @@ function getAlarm(e) {
     e.preventDefault;
   });
 
-  usersetalarm.addEventListener('click', setAlarm);
+  usersetalarm.onclick = function () {
+    userinputhour = Number(inputhour.value);
+    userinputmin = Number(inputmin.value);
 
-  function setAlarm(e) {
-    if (userhour !== 0 && usermin !== 0) {
-      document.querySelector('.alarm-on').innerHTML += `${userhour} : ${usermin}`;
-      document.querySelector('.alarm-on').classList.remove('d-none');
+    if (userinputhour && userinputmin) {
       document.querySelector('.wrapper-picktime').classList.add('d-none');
-      date.textContent = 'ALARM IS SET';
-
-      let userhour = Number(inputhour.value);
-      let usermin = Number(inputmin.value);
-
-      btnRight.removeEventListener('click', getAlarm);
-      usersetalarm.removeEventListener('click', setAlarm);
+      date.textContent = `Current active alarm | ${formatDigits(userinputhour)} : ${formatDigits(
+        userinputmin,
+      )}`;
+      time.textContent = 'alarm on';
     }
-    e.preventDefault();
-  }
-
+  };
   e.preventDefault();
 }
