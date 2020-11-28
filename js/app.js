@@ -162,17 +162,19 @@ const alarmcontrols = document.querySelector('.wrapper-alarm');
 
 let userinputhour;
 let userinputmin;
+let checkAlarmID;
 
-let check = setTimeout(checkAlarm, 10000);
-
-btnRight.addEventListener('click', getAlarm);
+btnRight.addEventListener('click', setAlarm);
 
 turnoffalarm.addEventListener('click', turnOff);
 
+//functions
 function turnOff(e) {
   alarmsound.pause();
   alarmsound.currentTime = 0;
-  localStorage.clear();
+  clearInterval(checkAlarmID);
+  date.textContent = '';
+  time.textContent = 'alarm OFF';
 
   e.preventDefault();
 }
@@ -182,13 +184,16 @@ function checkAlarm() {
   let h = datenow.getHours();
   let m = datenow.getMinutes();
 
-  if (userinputhour <= h && userinputmin <= m) {
+  //'01' == 1 -> true
+  if (userinputhour == h && userinputmin == m) {
     alarmsound.play();
-    alarmsound.play();
+    clearInterval(checkAlarmID);
+    date.textContent = `current alarm set`;
+    time.textContent = `${userinputhour} : ${userinputmin}`;
   }
 }
 
-function getAlarm(e) {
+function setAlarm(e) {
   clearInterval(startDisplayTime);
   btnLeft.removeEventListener('click', getFreez);
   date.textContent = 'please, set alarm';
@@ -224,15 +229,16 @@ function getAlarm(e) {
   });
 
   usersetalarm.onclick = function () {
-    userinputhour = Number(inputhour.value);
-    userinputmin = Number(inputmin.value);
+    userinputhour = inputhour.value; // -> string
+    userinputmin = inputmin.value; // -> string
 
+    // empty string -> false
     if (userinputhour && userinputmin) {
       document.querySelector('.wrapper-picktime').classList.add('d-none');
-      date.textContent = `Current active alarm | ${formatDigits(userinputhour)} : ${formatDigits(
-        userinputmin,
-      )}`;
+      date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
       time.textContent = 'alarm on';
+
+      checkAlarmID = setInterval(checkAlarm, 1000 * 30);
     }
   };
   e.preventDefault();
