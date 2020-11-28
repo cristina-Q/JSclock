@@ -120,6 +120,7 @@ function getFreez(e) {
     let stopfreez = new Date().getTime();
     let difference = Math.abs(startfreez - stopfreez);
     time.textContent = getTimeDifference(difference);
+    date.textContent = 'FREEZING TIME FOR:';
 
     document.querySelector('.alarm-time').style.color = 'var(--main-color)';
     document.querySelector('.freez-time').textContent = 'to CLOCK';
@@ -163,6 +164,8 @@ const alarmcontrols = document.querySelector('.wrapper-alarm');
 let userinputhour;
 let userinputmin;
 let checkAlarmID;
+let diffhour;
+let diffmin;
 
 btnRight.addEventListener('click', setAlarm);
 
@@ -183,6 +186,9 @@ function checkAlarm() {
   let datenow = new Date();
   let h = datenow.getHours();
   let m = datenow.getMinutes();
+
+  diffhour = Number(userinputhour) - h;
+  diffmin = Number(userinputmin) - m;
 
   //'01' == 1 -> true
   if (userinputhour == h && userinputmin == m) {
