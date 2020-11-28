@@ -12,6 +12,8 @@ const month = document.getElementById('month');
 const daynumber = document.getElementById('daynumber');
 const year = document.getElementById('year');
 
+let startDisplayTime;
+
 function displayTime() {
   let date = new Date();
 
@@ -63,7 +65,7 @@ function displayTime() {
   year.textContent = `${yearnow}`;
 }
 displayTime();
-let startDisplayTime = setInterval(displayTime, 1000);
+startDisplayTime = setInterval(displayTime, 1000);
 
 //--------------  change page accent color  ----------
 const colorchange = document.querySelector('.change-color');
@@ -123,8 +125,9 @@ function getFreez(e) {
     date.textContent = 'FREEZING TIME FOR:';
 
     document.querySelector('.alarm-time').style.color = 'var(--main-color)';
-    document.querySelector('.freez-time').textContent = 'to CLOCK';
     document.querySelector('.alarm-time').textContent = 'STILL COUNT';
+    document.querySelector('.freez-time').textContent = 'to CLOCK';
+    document.querySelector('.freez-time').style.color = 'var(--main-color)';
 
     btnLeft.removeEventListener('click', getFreez);
 
@@ -169,26 +172,13 @@ let diffmin;
 
 btnRight.addEventListener('click', setAlarm);
 
-turnoffalarm.addEventListener('click', turnOff);
-
-//functions
-function turnOff(e) {
-  alarmsound.pause();
-  alarmsound.currentTime = 0;
-  clearInterval(checkAlarmID);
-  date.textContent = '';
-  time.textContent = 'alarm OFF';
-
-  e.preventDefault();
-}
-
 function checkAlarm() {
   let datenow = new Date();
   let h = datenow.getHours();
   let m = datenow.getMinutes();
 
-  diffhour = Number(userinputhour) - h;
-  diffmin = Number(userinputmin) - m;
+  diffhour = Math.abs(Number(userinputhour) - h);
+  diffmin = Math.abs(Number(userinputmin) - m);
 
   //'01' == 1 -> true
   if (userinputhour == h && userinputmin == m) {
@@ -208,7 +198,8 @@ function setAlarm(e) {
   document.querySelector('.wrapper-picktime').classList.remove('d-none');
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
-  document.querySelector('.freez-time').textContent = 'TO CLOCK';
+  document.querySelector('.freez-time').textContent = 'clear alarm';
+  document.querySelector('.freez-time').style.color = 'red';
 
   //---------user input minute
   inputmin.addEventListener('click', (e) => {
@@ -235,16 +226,18 @@ function setAlarm(e) {
   });
 
   usersetalarm.onclick = function () {
+    clearInterval(startDisplayTime);
     userinputhour = inputhour.value; // -> string
     userinputmin = inputmin.value; // -> string
 
     // empty string -> false
     if (userinputhour && userinputmin) {
       document.querySelector('.wrapper-picktime').classList.add('d-none');
+      displayTime();
+      setInterval(displayTime, 1000);
       date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
-      time.textContent = 'alarm on';
 
-      checkAlarmID = setInterval(checkAlarm, 1000 * 30);
+      checkAlarmID = setInterval(checkAlarm, 1000 * 20);
     }
   };
   e.preventDefault();
