@@ -1,6 +1,7 @@
 $main-color: var(--main-color);
-$neutral-color: rgba(128, 128, 128, 0.7);
+$neutral-color: var(--neutral-color);
 
 :root {
   --main-color: cyan;
+  --neutral-color: rgba(128, 128, 128, 0.7);
 }

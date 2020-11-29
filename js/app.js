@@ -184,17 +184,16 @@ function checkAlarm() {
   if (userinputhour == h && userinputmin == m) {
     alarmsound.play();
     clearInterval(checkAlarmID);
-    date.textContent = `current alarm set`;
-    time.textContent = `${userinputhour} : ${userinputmin}`;
   }
 }
 
 function setAlarm(e) {
   clearInterval(startDisplayTime);
   btnLeft.removeEventListener('click', getFreez);
+  time.textContent = '';
+  date.textContent = '';
   date.textContent = 'please, set alarm';
 
-  time.textContent = '';
   document.querySelector('.wrapper-picktime').classList.remove('d-none');
   document.querySelector('.alarm-time').style.color = 'var(--main-color)';
   document.querySelector('.alarm-time').textContent = 'ALARM MOD';
@@ -225,7 +224,7 @@ function setAlarm(e) {
     e.preventDefault;
   });
 
-  usersetalarm.onclick = function () {
+  usersetalarm.addEventListener('click', function (e) {
     clearInterval(startDisplayTime);
     userinputhour = inputhour.value; // -> string
     userinputmin = inputmin.value; // -> string
@@ -233,12 +232,16 @@ function setAlarm(e) {
     // empty string -> false
     if (userinputhour && userinputmin) {
       document.querySelector('.wrapper-picktime').classList.add('d-none');
+      date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
       displayTime();
       setInterval(displayTime, 1000);
-      date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
-
+      time.style.fontSize = '55px';
+      time.style.color = 'var(--neutral-color)';
       checkAlarmID = setInterval(checkAlarm, 1000 * 20);
     }
-  };
+
+    e.preventDefault();
+  });
+
   e.preventDefault();
 }
