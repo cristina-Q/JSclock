@@ -167,8 +167,11 @@ const alarmcontrols = document.querySelector('.wrapper-alarm');
 let userinputhour;
 let userinputmin;
 let checkAlarmID;
-let diffhour;
-let diffmin;
+
+//var defined for percentage fill color svg (effect on alarm mode) -> next feature to implement
+let timecheckalarm;
+let timesetalarm;
+let fillalartime;
 
 btnRight.addEventListener('click', setAlarm);
 
@@ -176,14 +179,13 @@ function checkAlarm() {
   let datenow = new Date();
   let h = datenow.getHours();
   let m = datenow.getMinutes();
-
-  diffhour = Math.abs(Number(userinputhour) - h);
-  diffmin = Math.abs(Number(userinputmin) - m);
+  timecheckalarm = datenow.getTime();
 
   //'01' == 1 -> true
   if (userinputhour == h && userinputmin == m) {
     alarmsound.play();
     clearInterval(checkAlarmID);
+    fillalarmtime = datenow.getTime();
   }
 }
 
@@ -231,13 +233,14 @@ function setAlarm(e) {
 
     // empty string -> false
     if (userinputhour && userinputmin) {
+      timesetalarm = new Date().getTime();
       document.querySelector('.wrapper-picktime').classList.add('d-none');
       date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
       displayTime();
       setInterval(displayTime, 1000);
       time.style.fontSize = '55px';
       time.style.color = 'var(--neutral-color)';
-      checkAlarmID = setInterval(checkAlarm, 1000 * 20);
+      checkAlarmID = setInterval(checkAlarm, 1000 * 5);
     }
 
     e.preventDefault();

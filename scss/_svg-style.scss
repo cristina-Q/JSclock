@@ -7,6 +7,12 @@
   stroke: $main-color;
   stroke-width: 1px;
   z-index: -1;
+
+  //change style:
+
+  stroke-width: 2px;
   stroke-dasharray: 1000;
-  // stroke-dashoffset: 1000;
+  stroke-dasharray: 5, 700, 10;
+  stroke-dashoffset: 5, 700, 10;
+  // stroke-linecap: round;
 }
