@@ -5,5 +5,8 @@
   top: 0;
   left: 0;
   stroke: $main-color;
+  stroke-width: 1px;
   z-index: -1;
+  stroke-dasharray: 1000;
+  // stroke-dashoffset: 1000;
 }

@@ -1538,7 +1538,9 @@ a {
   top: 0;
   left: 0;
   stroke: var(--main-color);
+  stroke-width: 1px;
   z-index: -1;
+  stroke-dasharray: 1000;
 }
 
 .wrapper-picktime {
