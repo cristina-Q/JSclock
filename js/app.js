@@ -110,7 +110,7 @@ btnLeft.addEventListener('click', getFreez);
 
 function getFreez(e) {
   clearInterval(startDisplayTime);
-  let startfreez = new Date().getTime();
+  let startfreez = Date.now();
   time.textContent = 'FREEZ';
   document.querySelector('.freez-time').textContent = 'FREEZ ON';
   document.querySelector('.freez-time').style.color = 'var(--main-color)';
@@ -119,7 +119,7 @@ function getFreez(e) {
   //now the second button start to listen inside first event propagation
   btnRight.addEventListener('click', (e) => {
     document.querySelector('.wrapper-picktime').classList.add('d-none');
-    let stopfreez = new Date().getTime();
+    let stopfreez = Date.now();
     let difference = Math.abs(startfreez - stopfreez);
     time.textContent = getTimeDifference(difference);
     date.textContent = 'FREEZING TIME FOR:';
@@ -233,7 +233,7 @@ function setAlarm(e) {
 
     // empty string -> false
     if (userinputhour && userinputmin) {
-      timesetalarm = new Date().getTime();
+      timesetalarm = Date.now();
       document.querySelector('.wrapper-picktime').classList.add('d-none');
       date.textContent = `Current active alarm | ${userinputhour} : ${userinputmin}`;
       displayTime();
