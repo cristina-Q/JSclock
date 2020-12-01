@@ -1464,7 +1464,6 @@ a {
 }
 .date-time .clock-wrapper {
   position: relative;
-  max-width: 460px;
 }
 .date-time .clock-wrapper .clock {
   margin-bottom: 40px;
